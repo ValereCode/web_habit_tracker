@@ -1,0 +1,30 @@
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <div class="footer__logoRow">
+        <img ngSrc="obsession-icon.png" width="40" height="40" alt="" class="footer__logo" />
+        <span class="footer__name">{{ i18n.t('common.appName') }}</span>
+      </div>
+      <p class="footer__tagline">{{ i18n.t('footer.tagline') }}</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ i18n.t('footer.product') }}</h4>
+      <a href="/#features">{{ i18n.t('nav.features') }}</a>
+      <a href="/#gamification">{{ i18n.t('nav.gamification') }}</a>
+      <a href="/#languages">{{ i18n.t('home.languages.eyebrow') }}</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>{{ i18n.t('footer.about') }}</h4>
+      <a routerLink="/contact">{{ i18n.t('nav.contact') }}</a>
+      <a routerLink="/confidentialite">{{ i18n.t('nav.privacy') }}</a>
+      <a routerLink="/mentions-legales">{{ i18n.t('nav.legal') }}</a>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <span>{{ i18n.t('footer.copyright') }}</span>
+    <span class="footer__built">{{ i18n.t('footer.builtWith') }}</span>
+  </div>
+</footer>

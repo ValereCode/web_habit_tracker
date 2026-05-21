@@ -1,0 +1,70 @@
+<div class="page">
+  <div class="container">
+    <header class="page__head">
+      <a routerLink="/" class="page__back">← {{ i18n.t('common.backHome') }}</a>
+      <h1 class="page__title">{{ i18n.t('contact.title') }}</h1>
+      <p class="page__lede">{{ i18n.t('contact.lede') }}</p>
+    </header>
+
+    <div class="grid">
+      <form class="form" [formGroup]="form" (ngSubmit)="submit()" novalidate>
+        <div class="field">
+          <label for="name">{{ i18n.t('contact.form.name') }}</label>
+          <input id="name" type="text" formControlName="name" autocomplete="name" />
+          @if (form.controls.name.touched && form.controls.name.invalid) {
+            <span class="error">{{ i18n.t('contact.form.required') }}</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="email">{{ i18n.t('contact.form.email') }}</label>
+          <input id="email" type="email" formControlName="email" autocomplete="email" />
+          @if (form.controls.email.touched && form.controls.email.invalid) {
+            <span class="error">
+              @if (form.controls.email.errors?.['required']) {
+                {{ i18n.t('contact.form.required') }}
+              } @else {
+                {{ i18n.t('contact.form.invalidEmail') }}
+              }
+            </span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="subject">{{ i18n.t('contact.form.subject') }}</label>
+          <input id="subject" type="text" formControlName="subject" />
+          @if (form.controls.subject.touched && form.controls.subject.invalid) {
+            <span class="error">{{ i18n.t('contact.form.required') }}</span>
+          }
+        </div>
+
+        <div class="field">
+          <label for="message">{{ i18n.t('contact.form.message') }}</label>
+          <textarea id="message" formControlName="message" rows="6"></textarea>
+          @if (form.controls.message.touched && form.controls.message.invalid) {
+            <span class="error">{{ i18n.t('contact.form.required') }}</span>
+          }
+        </div>
+
+        <button type="submit" class="submit">
+          {{ i18n.t('contact.form.submit') }}
+        </button>
+        <p class="hint">{{ i18n.t('contact.form.openMail') }}</p>
+        @if (sent()) {
+          <p class="sent">✓</p>
+        }
+      </form>
+
+      <aside class="side">
+        <div class="sideCard">
+          <h3>{{ i18n.t('contact.directEmail.title') }}</h3>
+          <a class="sideCard__email" [href]="'mailto:' + 'setodji2001@gmail.com'">{{ i18n.t('contact.directEmail.body') }}</a>
+        </div>
+        <div class="sideCard">
+          <h3>{{ i18n.t('contact.response.title') }}</h3>
+          <p>{{ i18n.t('contact.response.body') }}</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>

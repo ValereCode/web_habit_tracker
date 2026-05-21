@@ -1,0 +1,30 @@
+.toggle {
+  display: inline-flex;
+  padding: 4px;
+  background: var(--color-surface);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+}
+
+.toggle__btn {
+  padding: 6px 14px;
+  border: 0;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  font-size: var(--fs-xs);
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-pill);
+  transition: color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out);
+}
+
+.toggle__btn:hover {
+  color: var(--color-text);
+}
+
+.toggle__btn--active {
+  background: var(--color-primary);
+  color: white;
+  box-shadow: 0 2px 12px rgba(99, 102, 241, 0.4);
+}

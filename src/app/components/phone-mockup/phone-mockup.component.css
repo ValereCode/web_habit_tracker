@@ -1,0 +1,66 @@
+.mockup {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+  animation: float 6s ease-in-out infinite;
+}
+
+.mockup__glow {
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.45) 0%, transparent 65%);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.mockup__frame {
+  position: relative;
+  padding: 14px;
+  background: linear-gradient(160deg, #1E293B 0%, #0F172A 100%);
+  border-radius: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 30px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.mockup__notch {
+  position: absolute;
+  top: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 26px;
+  background: #000;
+  border-radius: 14px;
+  z-index: 2;
+}
+
+.mockup__screen {
+  position: relative;
+  background: var(--color-bg-elevated);
+  border-radius: 32px;
+  overflow: hidden;
+  padding: 60px 18px 24px;
+  min-height: 560px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 480px) {
+  .mockup {
+    width: 260px;
+  }
+
+  .mockup__screen {
+    min-height: 500px;
+  }
+}

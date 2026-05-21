@@ -1,0 +1,35 @@
+<header class="header">
+  <div class="container header__inner">
+    <a routerLink="/" class="header__brand" aria-label="Obsession">
+      <img
+        ngSrc="obsession-icon.png"
+        width="36"
+        height="36"
+        alt=""
+        priority
+        class="header__logo"
+      />
+      <span class="header__name">{{ i18n.t('common.appName') }}</span>
+    </a>
+
+    <nav class="header__nav" [class.header__nav--open]="mobileOpen()" aria-label="Primary">
+      <a routerLink="/" routerLinkActive="header__link--active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMobile()">{{ i18n.t('nav.home') }}</a>
+      <a href="/#features" (click)="closeMobile()">{{ i18n.t('nav.features') }}</a>
+      <a href="/#gamification" (click)="closeMobile()">{{ i18n.t('nav.gamification') }}</a>
+      <a routerLink="/contact" routerLinkActive="header__link--active" (click)="closeMobile()">{{ i18n.t('nav.contact') }}</a>
+    </nav>
+
+    <div class="header__actions">
+      <app-language-toggle />
+      <button
+        type="button"
+        class="header__burger"
+        (click)="toggleMobile()"
+        [attr.aria-expanded]="mobileOpen()"
+        aria-label="Menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>

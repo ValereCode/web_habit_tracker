@@ -1,0 +1,33 @@
+<section class="section gamification" id="gamification">
+  <div class="container">
+    <app-section-heading
+      [eyebrow]="i18n.t('home.gamification.eyebrow')"
+      [title]="i18n.t('home.gamification.title')"
+      [lede]="i18n.t('home.gamification.lede')"
+    />
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat__value">{{ i18n.t('home.gamification.xpTitle') }}</span>
+        <span class="stat__label">{{ i18n.t('home.gamification.xpDesc') }}</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">{{ i18n.t('home.gamification.levelTitle') }}</span>
+        <span class="stat__label">{{ i18n.t('home.gamification.levelDesc') }}</span>
+      </div>
+      <div class="stat">
+        <span class="stat__value">{{ i18n.t('home.gamification.streakTitle') }}</span>
+        <span class="stat__label">{{ i18n.t('home.gamification.streakDesc') }}</span>
+      </div>
+    </div>
+
+    <div class="badges">
+      <app-badge-showcase emoji="🔥" [label]="i18n.t('home.gamification.badge7')" [condition]="i18n.t('home.gamification.badgeCondition7')" />
+      <app-badge-showcase emoji="⚡" [label]="i18n.t('home.gamification.badge14')" [condition]="i18n.t('home.gamification.badgeCondition14')" />
+      <app-badge-showcase emoji="💎" [label]="i18n.t('home.gamification.badge30')" [condition]="i18n.t('home.gamification.badgeCondition30')" />
+      <app-badge-showcase emoji="👑" [label]="i18n.t('home.gamification.badge100')" [condition]="i18n.t('home.gamification.badgeCondition100')" />
+      <app-badge-showcase emoji="🌟" [label]="i18n.t('home.gamification.badgeMulti')" [condition]="i18n.t('home.gamification.badgeConditionMulti')" />
+      <app-badge-showcase emoji="🚀" [label]="i18n.t('home.gamification.badgeLevel')" [condition]="i18n.t('home.gamification.badgeConditionLevel')" />
+    </div>
+  </div>
+</section>
